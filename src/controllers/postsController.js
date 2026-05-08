@@ -1,7 +1,6 @@
 const postsService = require('../services/postsService')
 
 exports.getPosts = async (req, res) => {
-    console.log("Trying to get Posts...")
     try {
         const data = await postsService.getPosts()
         return res.status(200).json(data)
@@ -13,6 +12,7 @@ exports.getPosts = async (req, res) => {
 
 exports.publishPost = async (req, res) => {
     try {
+        console.log("Lets try to post something right?")
         await postsService.publishPost(req.body)
         res.sendStatus(201)
     } catch (err) {

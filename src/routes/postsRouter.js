@@ -1,10 +1,11 @@
 const express = require('express')
 const postsRouter = express.Router()
 const postsController = require('../controllers/postsController')
+const isLogged = require('../middleware/isLogged')
 
 postsRouter.route('/')
     .get(postsController.getPosts)
-    .post(postsController.publishPost)
+    .post(isLogged, postsController.publishPost)
 
 postsRouter.route('/:slug')
     .get(postsController.getSpecificPost)

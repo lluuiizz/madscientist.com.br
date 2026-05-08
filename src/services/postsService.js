@@ -23,7 +23,28 @@ async function getPosts() {
 }
 
 async function publishPost(data) {
-    return 'TODO: PublishPost'
+    const client = await pool.connect()
+
+    try {
+        await client.query('BEGIN')
+        const query = {
+            text: 'INSERT INTO posts (title, slug, category, summary, tags, content, author) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+            values: [data.title, data.slug, data.category, data.summary, data.tags, data.content, data.author]
+        }
+
+        await client.query(query)
+        console.log("tentando criar o post! com os valores : \n\n", data)
+
+
+        await client.query('COMMIT')
+
+    } catch(err) {
+        await client.query('ROLLBACK')
+        throw err
+
+    } finally {
+        client.release()
+    }
 
 }
 

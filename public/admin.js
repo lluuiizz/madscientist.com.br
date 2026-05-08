@@ -12,6 +12,7 @@ async function checkAuth() {
 document.getElementById('post-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    console.log("Submiting form!!!")
     const fileInput = document.getElementById('markdown-file');
     const file = fileInput.files[0];
     const messageDiv = document.getElementById('message');
