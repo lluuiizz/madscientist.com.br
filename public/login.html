@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório - Acesso Restrito</title>
+    <link rel="stylesheet" href="/style.css"> <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <div class="login-screen">
+        <div class="login-box">
+            <div class="scanner-line"></div>
+            <h1>ACESSO AO NÚCLEO</h1>
+            <form id="login-form">
+                <div class="input-group">
+                    <label>IDENTIFICAÇÃO</label>
+                    <input type="text" id="username" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>CÓDIGO DE ACESSO</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-login">DESBLOQUEAR</button>
+            </form>
+            <p id="error-msg"></p>
+        </div>
+    </div>
+    <script src="/login.js"></script>
+</body>
+</html>

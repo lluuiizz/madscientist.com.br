@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório - Painel de Controle</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+    <header class="admin-nav">
+        <span>SISTEMA DE ARQUIVOS - DR. MAD</span>
+        <a href="/" class="view-site">Ver Site</a>
+    </header>
+
+    <main class="admin-main">
+        <section class="publish-box">
+            <h2>Nova Publicação de Pesquisa</h2>
+            <form id="post-form">
+                <div class="row">
+                    <input type="text" id="title" placeholder="Título da Pesquisa" required>
+                    <input type="text" id="slug" placeholder="slug-da-url" required>
+                </div>
+                
+                <div class="row">
+                    <input type="text" id="category" placeholder="Categoria (ex: Física)">
+                    <input type="text" id="tags" placeholder="Tags (tag1, tag2)">
+                </div>
+
+                <textarea id="summary" placeholder="Resumo breve do experimento..." required></textarea>
+
+                <div class="file-area">
+                    <label for="markdown-file">UPLOAD ARQUIVO .MD</label>
+                    <input type="file" id="markdown-file" accept=".md" required>
+                </div>
+
+                <button type="submit" id="btn-submit">Sincronizar com Banco de Dados</button>
+            </form>
+            <div id="status-msg"></div>
+        </section>
+    </main>
+
+    <script src="/admin.js"></script>
+</body>
+</html>

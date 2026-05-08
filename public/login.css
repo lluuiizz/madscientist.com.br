@@ -1,0 +1,79 @@
+.login-screen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #050505;
+}
+
+.login-box {
+    background: #0a0a0a;
+    padding: 40px;
+    border: 1px solid var(--accent-green);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.1);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Linha de efeito scanner */
+.scanner-line {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+    animation: scan 3s infinite linear;
+    opacity: 0.3;
+}
+
+@keyframes scan {
+    0% { top: 0; } 100% { top: 100%; }
+}
+
+.login-box h1 {
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.input-group { margin-bottom: 20px; }
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    padding: 12px;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-green);
+    outline: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: var(--accent-green);
+    color: #000;
+}
