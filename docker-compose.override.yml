@@ -2,7 +2,7 @@ services:
   web:
     image: nginx:alpine
     volumes:
-      - ./front:/usr/share/nginx/html
+      - ./public:/usr/share/nginx/html
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     
   api:
