@@ -162,3 +162,47 @@ a {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+/* ============== MARKDOWN STYLE ============= */
+/* Container principal do post */
+.post-content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--text-main);
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* Espaçamento de parágrafos */
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Citações (Blockquotes) - Estilo laboratório */
+.post-content blockquote {
+    border-left: 4px solid var(--accent-green);
+    padding: 10px 20px;
+    background: rgba(0, 255, 102, 0.05);
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* Imagens dentro do Markdown */
+.post-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin: 30px 0;
+}
+
+/* Links dentro do texto */
+.post-content a {
+    color: var(--accent-green);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.post-content a:hover {
+    background: var(--accent-green);
+    color: var(--bg-color);
+}

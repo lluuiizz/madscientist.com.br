@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mad Scientist | A Revista Popular do Conhecimento</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/script.js" defer></script>
 </head>
 <body>
 
@@ -24,28 +26,10 @@
         </header>
 
         <main class="content">
-            <section class="post-list">
-                
-                <article class="post-item">
-                    <span class="post-date">12 de Maio, 2024</span>
-                    <h2><a href="#">A verdade sobre o café com nitrogênio líquido</a></h2>
-                    <p>Muitos dizem que é perigoso. Eu digo que é a única forma de compilar código em três fusos horários diferentes simultaneamente. Neste post, detalho a proporção exata para não congelar as cordas vocais.</p>
-                </article>
-
-                <article class="post-item">
-                    <span class="post-date">08 de Maio, 2024</span>
-                    <h2><a href="#">Reator de fissão caseiro: Guia para iniciantes</a></h2>
-                    <p>Passo a passo de como isolar o seu laboratório de garagem antes que a agência reguladora bata na sua porta. Spoiler: você vai precisar de muito chumbo e fita isolante.</p>
-                </article>
-
-                <article class="post-item">
-                    <span class="post-date">01 de Maio, 2024</span>
-                    <h2><a href="#">Docker Swarm em Raspberry Pis</a></h2>
-                    <p>Uma análise profunda sobre orquestração de containers quando você só tem dois mini computadores e muita força de vontade para derrubar servidores em produção.</p>
-                </article>
-
+            <section id="post-container" class="post-list">
+                <p class = "loading"> Carregando publicações... </p>
             </section>
-        </main>
+       </main>
 
         <footer class="site-footer">
             <p>&copy; 2024 Mad Scientist. Não tente isso em casa.</p>
