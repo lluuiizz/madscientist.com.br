@@ -1,0 +1,48 @@
+services:
+  web:
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          -- node.labels.is-web == true
+  api:
+    deploy:
+      replicas: 3
+      placement:
+        constraints:
+          - node.labels.is-api == true
+    secrets:
+      - db_password
+  db:
+    configs:
+      - source: database_scheme
+        target: /docker-entrypoint-initdb.d/01-scheme.sql
+    environment:
+      POSTGRES_DB: madscientist_database
+      POSTGRES_USER: dev_admin
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    deploy:
+      placement:
+        constraints:
+          - node.labels.is-db == true
+
+configs:
+  database_scheme:
+    file: ./01-scheme.sql
+
+networks:
+  swarm_net:
+    driver: overlay
+    attachable: true
+
+secrets:
+  db_password:
+    external: true
+
+volumes:
+  postgres_data:

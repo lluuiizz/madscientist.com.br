@@ -1,0 +1,21 @@
+services:
+  web:
+    image: lluuiizzz/madscientist-web:latest
+    ports: 
+      - '80:80'
+    networks:
+      - swarm_net
+  api:
+    image: lluuiizzz/madscientist-api:latest
+    networks:
+      - swarm_net
+    environment:
+      - DB_HOST=db
+  db:
+    image: postgres:15-alpine
+    networks:
+      - swarm_net
+
+networks:
+  swarm_net: {}
+
