@@ -13,7 +13,7 @@ services:
           - node.labels.is-api == true
     secrets:
       - db_password
-      - cookie_secret
+      - session_secret 
   db:
     configs:
       - source: database_scheme
@@ -44,7 +44,7 @@ networks:
 secrets:
   db_password:
     external: true
-  cookie_secret:
+  session_secret:
     external: true
 
 volumes:

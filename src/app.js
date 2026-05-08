@@ -6,7 +6,7 @@ const sessionSecret = require('./config/cookies')()
 
 const app = express()
 app.use (session({
-    secret: '123',
+    secret: sessionSecret,
     resave: false,
     saveUninitialized: false,
     cookie: {
