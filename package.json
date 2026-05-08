@@ -1,0 +1,32 @@
+{
+  "name": "madscientist.com.br",
+  "version": "1.0.0",
+  "description": "A Revista Popular do Conhecimento",
+  "keywords": [
+    "journal",
+    "knowledge",
+    "social",
+    "media"
+  ],
+  "homepage": "https://github.com/lluuiizz/madscientist.com.br#readme",
+  "bugs": {
+    "url": "https://github.com/lluuiizz/madscientist.com.br/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lluuiizz/madscientist.com.br.git"
+  },
+  "license": "ISC",
+  "author": "Luiz Guilherme C. Silva",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "zod": "^4.4.3"
+  }
+}
