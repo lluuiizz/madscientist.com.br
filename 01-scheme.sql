@@ -15,29 +15,12 @@ CREATE TABLE IF NOT EXISTS posts (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE users (
+    username TEXT PRIMARY KEY,
+    pass TEXT NOT NULL
+);
 -- Indexar o slug e a data de publicação para buscas rápidas
 CREATE INDEX idx_posts_slug ON posts(slug);
 CREATE INDEX idx_posts_published_at ON posts(published_at);
 
-INSERT INTO posts (title, slug, summary, content, category, tags, status, published_at) 
-VALUES 
-(
-    'A verdade sobre o café com nitrogênio líquido', 
-    'cafe-nitrogenio-liquido', 
-    'Muitos dizem que é perigoso. Eu digo que é a única forma de compilar código rápido.', 
-    '<p>O nitrogênio líquido reduz a temperatura da xícara para -196°C instantaneamente...</p>', 
-    'Química', 
-    ARRAY['café', 'experimento', 'nitrogênio'], 
-    'published', 
-    NOW()
-),
-(
-    'Docker Swarm em Raspberry Pis', 
-    'docker-swarm-raspberry-pi', 
-    'Orquestração de containers em hardware de baixo custo.', 
-    '<p>Transforme seus mini computadores em um cluster de alta disponibilidade...</p>', 
-    'DevOps', 
-    ARRAY['docker', 'swarm', 'hardware'], 
-    'published', 
-    NOW()
-);
+;
